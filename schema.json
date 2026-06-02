@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mac-sandbox-config",
+  "title": "mac-sandbox Config",
+  "description": "Configuration for the mac-sandbox wrapper. Lives at ~/.config/mac-sandbox/<app>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sandbox_enabled", "allowed_directories"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference."
+    },
+    "program": {
+      "type": "string",
+      "description": "Override the binary name to launch. Defaults to the app name inferred from the wrapper filename (e.g. opencode-sandbox → opencode). Use this when the installed alias name differs from the real binary name."
+    },
+    "sandbox_enabled": {
+      "type": "boolean",
+      "description": "Set to false to skip sandbox-exec and run the app directly (useful for debugging)."
+    },
+    "allowed_directories": {
+      "type": "array",
+      "description": "Paths the app may read and write (your project directories). Supports ** glob (e.g. ~/repositories/**).",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "state_dirs": {
+      "type": "array",
+      "description": "Directories the app itself needs to read and write for its own config, data, and state (e.g. ~/.config/opencode/, ~/.local/share/opencode/). Always granted write access inside the sandbox.",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "temp_allowed": {
+      "type": "boolean",
+      "description": "Allow read/write access to /tmp and /var/tmp.",
+      "default": true
+    },
+    "network": {
+      "type": "string",
+      "description": "Network access level inside the sandbox.",
+      "enum": ["full", "none"],
+      "default": "full"
+    },
+    "process_spawning": {
+      "type": "string",
+      "description": "Whether the app may spawn child processes (git, shells, compilers, etc.).",
+      "enum": ["allowed", "denied"],
+      "default": "allowed"
+    },
+    "deny_privilege_escalation": {
+      "type": "boolean",
+      "description": "Deny system-privilege operations (setuid execution, capability changes). Approximates PR_SET_NO_NEW_PRIVS on Linux. Safe to enable for most CLI tools.",
+      "default": true
+    },
+    "description": {
+      "type": "string",
+      "description": "Free-text note about this config (not used by the script)."
+    }
+  }
+}

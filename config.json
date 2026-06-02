@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/minhtuannguyen/mac_sandbox/main/schema.json",
+  "sandbox_enabled": true,
+  "allowed_directories": [
+    "~/repositories/**",
+    "~/.clojure/**",
+    "~/.lein/**",
+    "~/.config/caveman/*"
+  ],
+  "state_dirs": [
+    "~/.config/opencode/",
+    "~/.local/share/opencode/",
+    "~/.local/state/opencode/"
+  ],
+  "temp_allowed": true,
+  "network": "full",
+  "process_spawning": "allowed",
+  "deny_privilege_escalation": true,
+  "description": "Sandbox config for opencode. Edit allowed_directories to control write access."
+}

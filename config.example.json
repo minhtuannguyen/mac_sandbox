@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/minhtuannguyen6868/opencode_sandbpx/main/schema.json",
+  "sandbox_enabled": true,
+  "allowed_directories": [
+    "~/repositories/**"
+  ],
+  "state_dirs": [
+    "~/.config/opencode/",
+    "~/.local/share/opencode/",
+    "~/.local/state/opencode/"
+  ],
+  "temp_allowed": true,
+  "network": "full",
+  "process_spawning": "allowed",
+  "deny_privilege_escalation": true,
+  "description": "Sandbox config for opencode. Edit allowed_directories to control write access to your projects."
+}

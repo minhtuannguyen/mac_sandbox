@@ -38,7 +38,7 @@ WRAPPER_NAME="${APP_NAME}-sandbox"
 
 # ── URLs & paths ──────────────────────────────────────────────────────────────
 
-REPO_RAW="https://raw.githubusercontent.com/minhtuannguyen/mac_sandbox/main/install.sh"
+REPO_RAW="https://raw.githubusercontent.com/minhtuannguyen/mac_sandbox/main"
 WRAPPER_URL="${REPO_RAW}/mac-sandbox"
 CONFIG_TEMPLATE_URL="${REPO_RAW}/config.example.json"
 

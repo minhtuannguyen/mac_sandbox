@@ -26,7 +26,7 @@ Each app has its own config at **`~/.config/mac-sandbox/<app>.json`** (created o
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/minhtuannguyen6868/opencode_sandbpx/main/schema.json",
+  "$schema": "https://raw.githubusercontent.com/minhtuannguyen/mac_sandbox/main/schema.json",
   "sandbox_enabled": true,
   "allowed_directories": [
     "~/repositories/**"

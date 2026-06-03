@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/minhtuannguyen6868/opencode_sandbpx/main/schema.json",
+  "$schema": "https://raw.githubusercontent.com/minhtuannguyen/opencode_sandbpx/main/schema.json",
   "sandbox_enabled": true,
   "allowed_directories": [
     "~/repositories/**"
